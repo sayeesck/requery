@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Complaint Page</title>
+    <link rel="stylesheet" href="Comp1.css">
+    <script>
+        function showOtherField() {
+            const issues = document.getElementById('issues');
+            const otherField = document.getElementById('otherField');
+            if (issues.value === 'other') {
+                otherField.style.display = 'block';
+            } else {
+                otherField.style.display = 'none';
+            }
+        }
+
+        function handleSubmit(event) {
+            event.preventDefault(); // Prevent default form submission
+
+            // Show success message
+            alert("Complaint has been sent and you will receive an email on your given email.");
+
+            // Redirect to index.html
+            window.location.href = '../Home Page/index.html';
+        }
+    </script>
+    <style>
+        .hidden-field {
+            display: none;
+        }
+        .complaint-box {
+            border: 1px solid #ccc;
+            padding: 15px;
+            border-radius: 5px;
+            text-align: center;
+            width: 80%; /* Adjust width as needed */
+            max-width: 600px; /* Optional: set a maximum width */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 0 auto; /* Center horizontally */
+        }
+        .form-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            padding-bottom: 100px; /* Space for the buttons */
+        }
+        .button-box {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="complaint-title">
+        <h1>Requery</h1>
+        <h2>Complaint Registration Page</h2>
+    </div>
+    <div class="Complaint">
+        <form id="complaintForm" class="comp-form1 form-container" onsubmit="handleSubmit(event)">
+            <label for="fname" class="label">First Name</label>
+            <input type="text" id="fname" name="firstname" placeholder="Your name.." required>
+            
+            <label for="lname" class="label">Last Name</label>
+            <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+        
+            <label for="comp" class="label">Department</label>
+            <select id="department" name="department" required>
+                <option value="">Choose your batch</option>
+                <option value="BCA">BCA</option>
+                <option value="BVOC">BVOC</option>
+                <option value="DHA">DHA</option>
+                <option value="BBA">BBA</option>
+                <option value="other">Other</option>
+            </select>
+            
+            <label for="year" class="label">Department Year</label>
+            <select id="year" name="year" required>
+                <option value="">Select your current year</option>
+                <option value="First Year">First Year</option>
+                <option value="Second Year">Second Year</option>
+                <option value="Third Year">Third Year</option>
+            </select>
+            
+            <label for="cid" class="label">College ID</label>
+            <input type="text" id="cid" name="collegeid" placeholder="xxxxxxxxxxxxx">
+            
+            <label for="rnum" class="label">Mobile Number</label>
+            <input type="tel" id="rnum" name="mobilenumber" placeholder="+91 xxxxx-xxxxx" pattern="[0-9]{10}" required>
+            
+            <!-- Complaint Section -->
+            <div class="complaint-box">
+                <label for="comp" class="label">Complaint</label>
+                <select id="issues" name="issues" onchange="showOtherField()" required>
+                    <option value="">Select an issue</option>
+                    <option value="water_not_filtered">Water not filtered</option>
+                    <option value="issue_with_electricity">Issue with the electricity</option>
+                    <option value="fan_not_working">Fan not working</option>
+                    <option value="other">Other (please specify)</option>
+                </select>
+                <div id="otherField" class="hidden-field">
+                    <label for="otherInput" class="label">Please specify:</label>
+                    <textarea id="otherInput" name="otherInput" maxlength="200" placeholder="Describe your issue..."></textarea>
+                </div>
+            </div>
+
+            <!-- Submit and Reset Buttons -->
+            <div class="button-box">
+                <input type="submit" value="Submit">
+                <input type="reset" value="Reset">
+            </div>
+        </form>
+    </div>
+</body>
+</html>

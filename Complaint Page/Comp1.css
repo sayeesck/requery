@@ -1,0 +1,71 @@
+body {
+    background-color: #fafafa;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+
+.complaint-title {
+    text-align: center;
+    text-shadow: 1px 1px 1px #2c95dd;
+}
+
+.comp-form1 {
+    box-sizing: border-box;
+    width: 60%;
+    margin-left: 20%;
+    align-items: center;
+    padding: 2rem;
+    border-radius: 1rem;
+    background-color: white;
+    border: 2px solid #319ec5;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    box-shadow: 1px 2px 10px #7cd0ef;
+}
+
+.label {
+    margin: 10px 0 15px 0;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+input, select, textarea {
+    text-align: center;
+    width: 80%;
+    padding: 12px;
+    margin: 5px 0;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=submit], input[type=reset] {
+    width: 30%; /* Increased width for better spacing */
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.3s; /* Transition for smooth animation */
+    margin: 10px; /* Added margin to create space between buttons */
+}
+
+input[type=submit] {
+    background-color: #04AA6D;
+    color: azure;
+}
+
+input[type=reset] {
+    background-color: #065fe4;
+    color: azure;
+}
+
+input[type=submit]:hover, input[type=reset]:hover {
+    background-color: #45a049; /* For submit */
+    background-color: #88a6f1; /* For reset (changed to a common color on hover) */
+    transform: scale(1.05); /* Slightly increase button size on hover */
+}
+
+input[type=reset]:hover {
+    background-color: #88a6f1;
+}
